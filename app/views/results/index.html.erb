@@ -1,3 +1,18 @@
+<div class="header">
+
+
+
+</div>
+
+
 <% @all_listings.each do |property| %>
-	<h1><%= property.title%></h1>
+	<div class="result">
+		<!-- <img src="https://d2b7sy2s89ejnw.cloudfront.net/images/estates/estate1208/estate1208-image29089-v174481-762x512.jpg"> -->
+		<%= image_tag(property.primary_small_image_url) %>
+		<h4><%= property.title %></h4>
+		<p>City: <%= property.city %></p>
+		<p>Province: <%= property.province %></p>
+		<p>Nightly From: $<%= property.nightly_from %></p>
+		<p>Nightly Rate: $<%= property.nightly_rate %></p>
+	</div>
 <% end %>
