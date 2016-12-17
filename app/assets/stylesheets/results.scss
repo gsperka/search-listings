@@ -3,8 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// .result {
-// 	h1 {
-// 		color: blue;
-// 	}
-// }
+.result {
+	width: 500px;
+	display: inline-block;
+	padding: 50px;
+}
+
+.img-responsive {
+	width: 100%;
+	display: block;
+	height: 430px;
+}

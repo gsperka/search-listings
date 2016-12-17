@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :results
 
+  get 'results/:id' => 'results#show', as: :result_path
+
   root 'results#index'
 
   # Example of regular route:
