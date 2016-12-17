@@ -1,5 +1,14 @@
 var Results = React.createClass({
 
+
+	 checkNil: function(event){
+	 	console.log(event)
+	 	return (
+	 		<div>{event}</div>
+	 	)
+	 },
+
+
 	render: function() {
 	 var listings = this.props.results
 
@@ -8,6 +17,8 @@ var Results = React.createClass({
 	 			<div key={i} className="result">
 	 			  <img className="img-responsive" src={result.primary_small_image_url} />
 	 				<h3>{result.title}</h3>
+
+	 				<h3>{this.checkNil()}</h3>
 
 	 				<h3>City:</h3>
 	 				<p>{result.city}</p>
