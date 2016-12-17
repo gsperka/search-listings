@@ -9,7 +9,7 @@
 	min-height: 900px;
 }
 
-.result:nth-of-type(odd) {
+.result:nth-of-type(even) {
 	float: right;
 	margin-right: 50px;
 
@@ -22,7 +22,7 @@
 	}
 }
 
-.result:nth-of-type(even) {
+.result:nth-of-type(odd) {
 	float: left;
 	margin-left: 50px;
 
