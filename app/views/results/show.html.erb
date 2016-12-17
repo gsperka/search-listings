@@ -1,26 +1,26 @@
 <div class="single-listing">
 	<%= image_tag(@listing.primary_small_image_url) %>
-	<h1><%= @listing.title %></h1>
+	<h1><%= print_if_present(@listing.title) %></h1>
 	<h3>Why stay here?</h3>
-	<%= @listing.why_stay_here %></p>
+	<%= print_if_present(@listing.why_stay_here) %></p>
 	<h3>Where?</h3>
-	<p>City: <%= @listing.city %></p>
-	<p>Province: <%= @listing.province %></p>
-	<p>Country: <%= @listing.country %></p>
+	<p>City: <%= print_if_present(@listing.city) %></p>
+	<p>Province: <%= print_if_present(@listing.province) %></p>
+	<p>Country: <%= print_if_present(@listing.country) %></p>
 
 	<h3>Cost:</h3>
-	<p>Nightly From: $<%= @listing.nightly_from %></p>
-	<p>Nightly Rate: $<%= @listing.nightly_rate %></p>
+	<p>Nightly From: $<%= print_if_present(@listing.nightly_from) %></p>
+	<p>Nightly Rate: $<%= print_if_present(@listing.nightly_rate) %></p>
 
 	<h3>Features:</h3>
-	<p>Number of Bedrooms: <%= @listing.num_bedrooms %></p>
-	<p>Number of Bathrooms: <%= @listing.num_bathrooms %></p>
-	<p>Sleeps Max: <%= @listing.sleeps_max %> (Sleeps Comfortably: <%= @listing.sleeps_comfortably%>)</p>
-	<p>Showcased Features: <%= @listing.showcased_features %></p>
+	<p>Number of Bedrooms: <%= print_if_present(@listing.num_bedrooms) %></p>
+	<p>Number of Bathrooms: <%= print_if_present(@listing.num_bathrooms) %></p>
+	<p>Sleeps Max: <%= print_if_present(@listing.sleeps_max) %> (Sleeps Comfortably: <%= print_if_present(@listing.sleeps_comfortably)%>)</p>
+	<p>Showcased Features: <%= display_from_array(@listing.showcased_features) %></p>
 
 	<h3>Reviews:</h3>
-	<p>User Rating: <%= @listing.user_rating %></p>
-	<p>Number of Reviews: <%= @listing.num_reviews %></p>
+	<p>User Rating: <%= print_if_present(@listing.user_rating) %></p>
+	<p>Number of Reviews: <%= print_if_present(@listing.num_reviews) %></p>
 </div>
 
 <div class="back-btn">

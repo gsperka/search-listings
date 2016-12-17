@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20161215025949) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "listings", force: :cascade do |t|
     t.string   "title"
     t.string   "why_stay_here"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20161215025949) do
     t.string   "url"
     t.integer  "nightly_from"
     t.integer  "nightly_rate"
-    t.text     "showcased_features",      default: "--- []\n"
+    t.text     "showcased_features",      default: [],              array: true
     t.string   "city"
     t.string   "province"
     t.string   "country"
@@ -35,8 +38,8 @@ ActiveRecord::Schema.define(version: 20161215025949) do
     t.integer  "num_reviews"
     t.float    "vaystays_weight"
     t.float    "tiebreaker_sort"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
 end

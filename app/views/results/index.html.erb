@@ -8,19 +8,19 @@
 <% @all_listings.each do |property| %>
 	<div class="result">
 		<%= image_tag(property.primary_small_image_url, class: "img-responsive") %>
-		<h2><%= property.title %></h2>
+		<h2><%= print_if_present(property.title) %></h2>
 
 		<h3>City:</h3>
-		<p><%= property.city %></p>
+		<p><%= print_if_present(property.city) %></p>
 
 		<h3>Province:</h3>
-		<p><%= property.province %></p>
+		<p><%= print_if_present(property.province) %></p>
 
 		<h3>Nightly From:</h3>
-		<p>$<%= property.nightly_from %></p>
+		<p>$<%= print_if_present(property.nightly_from) %></p>
 
 		<h3>Nightly Rate:</h3>
-		<p>$<%= property.nightly_rate %></p>
+		<p>$<%= print_if_present(property.nightly_rate) %></p>
 		<h5><%= link_to "See Full Listing", result_path(property.id.to_s) %> </h5>
 	</div>
 <% end %>
