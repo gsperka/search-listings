@@ -41,6 +41,8 @@ Visit: <tt>localhost:3000</tt>
 To run all tests created, type <tt>rspec</tt> from the root
 
 === Stack:
+
 *Ruby on Rails for the backend
 *React Rails for the front end
 *Postgres for the database
+
