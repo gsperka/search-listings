@@ -1,28 +1,46 @@
-== README
+== Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Use the results.json in the public folder to seed database
+Listings are sorted by tiebreaker_sort, by default
+Sort feature buttons are to re-sort cards by
+  user_rating, then tiebreaker_sort
+  sleeps_max, then sleeps_comfortably, then tiebreaker_sort
 
-Things you may want to cover:
+The input filter on top that allows users to input a minimum number of beds needed, and remove properties which the sleeps_max disqualifies
 
-* Ruby version
+=== Staging
 
-* System dependencies
+https://murmuring-garden-53877.herokuapp.com/
 
-* Configuration
+=== Instructions
 
-* Database creation
+To successfully run this application:
 
-* Database initialization
+Open the terminal and type:
 
-* How to run the test suite
+* <tt>cd Desktop</tt>
+* <tt>git clone https://github.com/gsperka/search-listings.git</tt>
+* <tt>cd search-listings</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+Once inside this repository, please run the following commands:
 
-* Deployment instructions
+* <tt>bundle install</tt>
+* <tt>rake db:create</tt>
+* <tt>rake db:migrate</tt>
+* <tt>rake db:seed</tt>
+* <tt>rails s</tt>
 
-* ...
+Visit: <tt>localhost:3000</tt>
 
+==== Assumptions that were made creating this application: 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* When typing an invalid character into the filter (i.e. "A", "?", "zTm", etc), the page will simply show nothing
+
+=== Tests:
+
+To run all tests created, type <tt>rspec</tt> from the root
+
+=== Stack:
+*Ruby on Rails for the backend
+*React Rails for the front end
+*Postgres for the database
