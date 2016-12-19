@@ -40,7 +40,7 @@ To run all tests created, type <tt>rspec</tt> from the root
 
 === Stack:
 
-* Ruby on Rails for the backend
+* Ruby on Rails for the back end
 * React Rails for the front end
 * Postgres for the database
 
