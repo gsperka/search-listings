@@ -2,10 +2,9 @@
 * Use the results.json file as your backing data
 * Listings are sorted by tiebreaker_sort, by default
 * Sort feature buttons are to re-sort cards by:
-* user_rating, then tiebreaker_sort
-* sleeps_max, then sleeps_comfortably, then tiebreaker_sort
-
-The input filter on top that allows users to input a minimum number of beds needed, and remove properties which the sleeps_max disqualifies
+  * user_rating, then tiebreaker_sort
+  * sleeps_max, then sleeps_comfortably, then tiebreaker_sort
+* The input filter on top that allows users to input a minimum number of beds needed, and remove properties which the sleeps_max disqualifies
 
 === Staging
 
