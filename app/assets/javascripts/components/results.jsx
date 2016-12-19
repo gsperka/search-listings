@@ -1,11 +1,11 @@
 var SortableResultsTable = React.createClass({
 
-	getInitialState: function() {
-		return {
+  getInitialState: function() {
+    return {
       results : this.props.results,
       inputValue : ''
     }
-	},
+  },
 
   updateInputValue: function(event) {
     this.setState({
@@ -14,9 +14,9 @@ var SortableResultsTable = React.createClass({
 
   },
 
-  // source: http://stackoverflow.com/questions/6913512/how-to-sort-an-array-of-objects-by-multiple-fields/30446887#30446887	
+  // source: http://stackoverflow.com/questions/6913512/how-to-sort-an-array-of-objects-by-multiple-fields/30446887#30446887  
   fieldSorter: function(fields) {
-		return function (a, b) {
+    return function (a, b) {
         return fields
             .map(function (o) {
                 var dir = 1;
@@ -32,27 +32,27 @@ var SortableResultsTable = React.createClass({
                 return p ? p : n;
             }, 0);
     };
-	},
+  },
 
-	sortResultsStateBy: function(field, results) {
+  sortResultsStateBy: function(field, results) {
 
-		var sortedResults = results.sort(this.fieldSorter(field))
+    var sortedResults = results.sort(this.fieldSorter(field))
 
-		this.setState({
-			results: sortedResults
-		})
-	},
+    this.setState({
+      results: sortedResults
+    })
+  },
 
-	render: function(){
-		return (
-			<div>
+  render: function(){
+    return (
+      <div>
         <p className="search-field">Minimum Number of Beds Needed: <input value={this.state.inputValue} onChange={this.updateInputValue} /></p>
-				<Sort results={this.props.results} sortResultsStateBy={this.sortResultsStateBy} />
-				<Listing results={this.props.results} sleepsMax={this.state.inputValue} />
-			</div>
-		)
+        <Sort results={this.props.results} sortResultsStateBy={this.sortResultsStateBy} />
+        <Listing results={this.props.results} sleepsMax={this.state.inputValue} />
+      </div>
+    )
 
-	}
+  }
 });
 
 var Sort = React.createClass({
@@ -77,23 +77,23 @@ var Sort = React.createClass({
 
 var Listing = React.createClass({
 
-	render: function() {
-	 var listings = this.props.results
+  render: function() {
+   var listings = this.props.results
    var sleepsMax = this.props.sleepsMax
 
-	function checkIfNil(val) {
-		if (val) {
-			return (
-				<span>{val}</span>
-			)
-		} else {
-			return (
-				<span>Not currently listed</span>
-			)
-		}
-	}
+  function checkIfNil(val) {
+    if (val) {
+      return (
+        <span>{val}</span>
+      )
+    } else {
+      return (
+        <span>Not currently listed</span>
+      )
+    }
+  }
 
-	var all_objects = listings.map(function(result,i){
+  var all_objects = listings.map(function(result,i){
     if (result.sleeps_max >= sleepsMax) {
       return (
         <div key={i} className="result">
@@ -116,9 +116,9 @@ var Listing = React.createClass({
         </div>
       )
     }
-	 })
+   })
 
-	 return <div>{all_objects}</div>
+   return <div>{all_objects}</div>
 }
 
 });

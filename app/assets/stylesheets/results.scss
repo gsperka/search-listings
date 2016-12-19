@@ -1,83 +1,83 @@
 h2 {
-	font-size: 17px
+  font-size: 17px
 }
 
 h3, p {
-	margin: 0px;
-	padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 h3 {
-	font-size: 15px;
+  font-size: 15px;
 }
 
 .result {
-	width: 250px;
-	text-align: left;
-	display: inline-block;
-	vertical-align: top;
-	padding: 15px;
+  width: 250px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding: 15px;
 }
 
 .img-responsive {
-	width: 100%;
-	display: block;
-	height: 250px;
+  width: 100%;
+  display: block;
+  height: 250px;
 }
 
 .single-listing {
-	text-align: center;
+  text-align: center;
 
-	img {
-		display: block;
-		margin: 0 auto;
-	}
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 
-	h3 {
-		margin: 10px 0px;
-		font-size: 18px;
-	}
+  h3 {
+    margin: 10px 0px;
+    font-size: 18px;
+  }
 
 }
 
 .btn {
-	width: 150px;
-	text-align: center;
-	background: blue;
-	padding: 10px;
-	margin: 25px auto 50px auto;
+  width: 150px;
+  text-align: center;
+  background: blue;
+  padding: 10px;
+  margin: 25px auto 50px auto;
 
-	a {
-		text-decoration: none;
-		color: #ffffff;
-	}
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
 .btn:hover {
-	background: #ffffff;
-	border: 2px solid blue;
+  background: #ffffff;
+  border: 2px solid blue;
 
-	a {
-		text-decoration: none;
-		color: blue;
-	}
+  a {
+    text-decoration: none;
+    color: blue;
+  }
 }
 
 .sort-section {
-	margin: 50px;
-	text-align: center;
+  margin: 50px;
+  text-align: center;
 
-	div {
-		width: 225px;
-		display: inline-block;
-		border: 2px solid black;
-		margin: 0px 20px;
-		padding: 5px;
-		cursor: pointer;
-	}
+  div {
+    width: 225px;
+    display: inline-block;
+    border: 2px solid black;
+    margin: 0px 20px;
+    padding: 5px;
+    cursor: pointer;
+  }
 }
 
 .search-field {
-	text-align: center;
-	margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
