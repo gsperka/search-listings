@@ -1,25 +1,3 @@
-var Sort = React.createClass({
-
-	sortResult: function(field) {
-		var results = this.props.results;
-		this.props.sortResultsStateBy(field, results);
-	},
-
-	render: function() {
-
-		return (
-			<div className="sort-section">
-        <div className="" onClick={this.sortResult.bind(this,['user_rating', 'tiebreaker_sort'])} >User Rating (Ascending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['-user_rating', '-tiebreaker_sort'])} >User Rating (Descending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['sleeps_max', 'sleeps_comfortably', 'tiebreaker_sort'])} >Sleeps Max (Ascending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['-sleeps_max', '-sleeps_comfortably', '-tiebreaker_sort'])} >Sleeps Max (Descending)</div>
-      </div>
-		)
-
-	}
-
-});
-
 var SortableResultsTable = React.createClass({
 
 	getInitialState: function() {
@@ -30,8 +8,6 @@ var SortableResultsTable = React.createClass({
 	},
 
   updateInputValue: function(event) {
-    var sleepValue = event.target.value
-
     this.setState({
       inputValue: event.target.value
     })    
@@ -79,10 +55,29 @@ var SortableResultsTable = React.createClass({
 	}
 });
 
+var Sort = React.createClass({
+
+  sortResult: function(field) {
+    var results = this.props.results;
+    this.props.sortResultsStateBy(field, results);
+  },
+
+  render: function() {
+    return (
+      <div className="sort-section">
+        <div className="" onClick={this.sortResult.bind(this,['user_rating', 'tiebreaker_sort'])} >User Rating (Ascending)</div>
+        <div className="" onClick={this.sortResult.bind(this,['-user_rating', '-tiebreaker_sort'])} >User Rating (Descending)</div>
+        <div className="" onClick={this.sortResult.bind(this,['sleeps_max', 'sleeps_comfortably', 'tiebreaker_sort'])} >Sleeps Max (Ascending)</div>
+        <div className="" onClick={this.sortResult.bind(this,['-sleeps_max', '-sleeps_comfortably', '-tiebreaker_sort'])} >Sleeps Max (Descending)</div>
+      </div>
+    )
+  }
+
+});
+
 var Listing = React.createClass({
 
 	render: function() {
-    console.log(this.props.sleepsComfortably)
 	 var listings = this.props.results
    var sleepsMax = this.props.sleepsMax
 
@@ -127,11 +122,3 @@ var Listing = React.createClass({
 }
 
 });
-
-
-
-
-
-
-
-
