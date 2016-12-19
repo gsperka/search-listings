@@ -51,7 +51,7 @@
 
 }
 
-.back-btn {
+.btn {
 	width: 150px;
 	text-align: center;
 	background: blue;
@@ -64,7 +64,7 @@
 	}
 }
 
-.back-btn:hover {
+.btn:hover {
 	background: #ffffff;
 	border: 2px solid blue;
 
@@ -74,3 +74,7 @@
 	}
 }
 
+.sort-section {
+	margin: 50px;
+	text-align: center;
+}
