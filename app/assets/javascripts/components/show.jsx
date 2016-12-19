@@ -42,7 +42,7 @@ var ShowResult = React.createClass({
 					<p>Number of Reviews: {this.checkIfNil(this.props.listing.num_reviews)}</p>
 				</div>
 
-				<div className="back-btn">
+				<div className="btn">
 					<a href="/">Back to All Listings</a>
 				</div>
 			</div>

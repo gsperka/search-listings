@@ -1,7 +1,6 @@
 var Sort = React.createClass({
 
 	sortResult: function(field) {
-		console.log(this.props.results)
 		var results = this.props.results;
 		this.props.sortResultsStateBy(field, results);
 	},
@@ -24,11 +23,23 @@ var Sort = React.createClass({
 var SortableResultsTable = React.createClass({
 
 	getInitialState: function() {
-		return {results : this.props.results}
+		return {
+      results : this.props.results,
+      inputValue : ''
+    }
 	},
 
-	fieldSorter: function(fields) {
-		console.log(fields)
+  updateInputValue: function(event) {
+    var sleepValue = event.target.value
+
+    this.setState({
+      inputValue: event.target.value
+    })    
+
+  },
+
+  // source: http://stackoverflow.com/questions/6913512/how-to-sort-an-array-of-objects-by-multiple-fields/30446887#30446887	
+  fieldSorter: function(fields) {
 		return function (a, b) {
         return fields
             .map(function (o) {
@@ -59,8 +70,9 @@ var SortableResultsTable = React.createClass({
 	render: function(){
 		return (
 			<div>
+        <p className="search-field">Minimum Number of Beds Needed: <input value={this.state.inputValue} onChange={this.updateInputValue} /></p>
 				<Sort results={this.props.results} sortResultsStateBy={this.sortResultsStateBy} />
-				<Listing results={this.props.results} />
+				<Listing results={this.props.results} sleepsMax={this.state.inputValue} />
 			</div>
 		)
 
@@ -70,7 +82,9 @@ var SortableResultsTable = React.createClass({
 var Listing = React.createClass({
 
 	render: function() {
+    console.log(this.props.sleepsComfortably)
 	 var listings = this.props.results
+   var sleepsMax = this.props.sleepsMax
 
 	function checkIfNil(val) {
 		if (val) {
@@ -84,32 +98,29 @@ var Listing = React.createClass({
 		}
 	}
 
-	 var all_objects = listings.map(function(result,i){
-	 		return (
-	 			<div key={i} className="result">
-	 			  <img className="img-responsive" src={result.primary_small_image_url} />
-	 				<h3>{checkIfNil(result.title)}</h3>
-	 					
-	 				<h3>User Rating: {checkIfNil(result.user_rating)}</h3>
-	 				<h3>Sleeps Max: {checkIfNil(result.sleeps_max)}</h3>
+	var all_objects = listings.map(function(result,i){
+    if (result.sleeps_max >= sleepsMax) {
+      return (
+        <div key={i} className="result">
+          <img className="img-responsive" src={result.primary_small_image_url} />
+          <h2>{checkIfNil(result.title)}</h2>
+            
+          <h3>City: {checkIfNil(result.city)}</h3>
 
+          <h3>Province: {checkIfNil(result.province)}</h3>
 
-	 				<h3>City:</h3>
-	 				<p>{checkIfNil(result.city)}</p>
+          <h3>Nightly From: ${checkIfNil(result.nightly_from)}</h3>
 
-	 				<h3>Province:</h3>
-	 				<p>{checkIfNil(result.province)}</p>
+          <h3>Nightly Rate: ${checkIfNil(result.nightly_rate)}</h3>
 
-	 				<h3>Nightly From:</h3>
-	 				<p>${checkIfNil(result.nightly_from)}</p>
+          <h3>User Rating: {checkIfNil(result.user_rating)}</h3>
+            
+          <h3>Sleeps Max: {checkIfNil(result.sleeps_max)}</h3>
 
-	 				<h3>Nightly Rate:</h3>
-	 				<p>${checkIfNil(result.nightly_rate)}</p>
-
-	 				<h5><a href={"/results/" + result.id}>See Full Listing</a></h5>
-	 			</div>
-
-	 		)
+          <h5><a href={"/results/" + result.id}>See Full Listing</a></h5>
+        </div>
+      )
+    }
 	 })
 
 	 return <div>{all_objects}</div>

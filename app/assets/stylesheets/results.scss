@@ -1,44 +1,28 @@
+h2 {
+	font-size: 17px
+}
+
+h3, p {
+	margin: 0px;
+	padding: 0px;
+}
+
+h3 {
+	font-size: 15px;
+}
+
 .result {
-	width: 500px;
-	text-align: center;
-	min-height: 900px;
-}
-
-.result:nth-of-type(even) {
-	float: right;
-	margin-right: 50px;
-
-	@media (max-width: 1100px) {
-		float: none;
-		display: block;
-		margin: 0 auto;
-		width: 100%;
-		margin-right: 0px;
-	}
-}
-
-.result:nth-of-type(odd) {
-	float: left;
-	margin-left: 50px;
-
-	@media (max-width: 1100px) {
-		float: none;
-		display: block;
-		margin: 0 auto;
-		width: 100%;
-		margin-left: 0px;
-	}
+	width: 250px;
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px;
 }
 
 .img-responsive {
 	width: 100%;
 	display: block;
-	height: 430px;
-
-	@media (max-width: 1100px) {
-		width: 500px;
-		margin: 0 auto;
-	}
+	height: 250px;
 }
 
 .single-listing {
@@ -47,6 +31,11 @@
 	img {
 		display: block;
 		margin: 0 auto;
+	}
+
+	h3 {
+		margin: 10px 0px;
+		font-size: 18px;
 	}
 
 }
@@ -77,4 +66,18 @@
 .sort-section {
 	margin: 50px;
 	text-align: center;
+
+	div {
+		width: 225px;
+		display: inline-block;
+		border: 2px solid black;
+		margin: 0px 20px;
+		padding: 5px;
+		cursor: pointer;
+	}
+}
+
+.search-field {
+	text-align: center;
+	margin-top: 50px;
 }
