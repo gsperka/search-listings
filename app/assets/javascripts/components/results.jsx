@@ -65,10 +65,14 @@ var Sort = React.createClass({
   render: function() {
     return (
       <div className="sort-section">
-        <div className="" onClick={this.sortResult.bind(this,['user_rating', 'tiebreaker_sort'])} >User Rating (Ascending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['-user_rating', '-tiebreaker_sort'])} >User Rating (Descending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['sleeps_max', 'sleeps_comfortably', 'tiebreaker_sort'])} >Sleeps Max (Ascending)</div>
-        <div className="" onClick={this.sortResult.bind(this,['-sleeps_max', '-sleeps_comfortably', '-tiebreaker_sort'])} >Sleeps Max (Descending)</div>
+        <div className="sort-row">
+          <div className="" onClick={this.sortResult.bind(this,['user_rating', 'tiebreaker_sort'])} >User Rating (Ascending)</div>
+          <div className="" onClick={this.sortResult.bind(this,['-user_rating', '-tiebreaker_sort'])} >User Rating (Descending)</div>
+        </div>
+        <div className="sort-row">
+          <div className="" onClick={this.sortResult.bind(this,['sleeps_max', 'sleeps_comfortably', 'tiebreaker_sort'])} >Sleeps Max (Ascending)</div>
+          <div className="" onClick={this.sortResult.bind(this,['-sleeps_max', '-sleeps_comfortably', '-tiebreaker_sort'])} >Sleeps Max (Descending)</div>
+        </div>
       </div>
     )
   }
