@@ -6,10 +6,6 @@
   * sleeps_max, then sleeps_comfortably, then tiebreaker_sort
 * The input filter on top that allows users to input a minimum number of beds needed, and remove properties which the sleeps_max disqualifies
 
-=== Staging
-
-https://murmuring-garden-53877.herokuapp.com/
-
 === Instructions
 
 To successfully run this application:
